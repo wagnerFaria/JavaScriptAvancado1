@@ -13,7 +13,7 @@
 
     <h1 class="text-center">Negociações</h1>
 
-    <form class="form">
+    <form class="form" onsubmit="negociacaoControler.adiciona(event)">
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -61,23 +61,9 @@
         </tfoot>
     </table>
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
     <script>
-        var n1 = new Negociacao(new Date(), 5, 700);
-        console.log(n1);
-        console.log(n1.volume);
-        console.log(n1.data);
-        console.log(n1.quantidade);
-        console.log(n1.valor);
-
-        console.log('Tentando alterar a data');
-
-        console.log('Data Antiga: ', n1.data);
-        n1.data.setDate(17);
-        console.log('Tentativa de alteracao: ', n1.data);
-
-
-        var n2 = new Negociacao();
-        console.log(n2);
+        let negociacaoControler = new NegociacaoController();
     </script>
 </body>
 
