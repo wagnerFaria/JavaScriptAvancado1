@@ -75,6 +75,18 @@
             };
         }
 
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {
+                //usa a conexao
+            });
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {
+                //a conexao tem que ser a mesma utilizada anteriormente
+            });
+
     </script>
 
 </body>
