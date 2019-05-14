@@ -17,7 +17,11 @@ class NegociacaoController {
             new Mensagem(),
             new MensagemView($('#mensagemView')),
             'texto');
+        this._init();
 
+    }
+
+    _init() {
         ConnectionFactory
             .getConnection()
             .then(connection => new NegociacaoDao(connection))
@@ -26,6 +30,10 @@ class NegociacaoController {
             .catch(erro => {
                 this._mensagem.texto = erro;
             });
+
+        setInterval(() => {
+            this.importaNegociacoes();
+        }, 3000);
     }
 
     adiciona(event) {
